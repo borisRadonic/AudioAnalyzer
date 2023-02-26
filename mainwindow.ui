@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Audio Analyzer</string>
+  </property>
+  <widget class="QWidget" name="centralWidget"/>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>400</width>
+     <height>21</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuView">
+    <property name="title">
+     <string>View</string>
+    </property>
+    <addaction name="actionOscilloscope"/>
+    <addaction name="actionSignalGenerator"/>
+    <addaction name="actionSpectrumAnalyzer"/>
+   </widget>
+   <widget class="QMenu" name="menuInterace">
+    <property name="title">
+     <string>Interace</string>
+    </property>
+    <addaction name="actionConnect"/>
+    <addaction name="actionDisconnect"/>
+    <addaction name="separator"/>
+    <addaction name="actionDevices"/>
+   </widget>
+   <addaction name="menuView"/>
+   <addaction name="menuInterace"/>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionOscilloscope">
+   <property name="text">
+    <string>Oscilloscope</string>
+   </property>
+  </action>
+  <action name="actionSignalGenerator">
+   <property name="text">
+    <string>Signal Generator</string>
+   </property>
+  </action>
+  <action name="actionSpectrumAnalyzer">
+   <property name="text">
+    <string>Spectrum Analyzer</string>
+   </property>
+  </action>
+  <action name="actionSoundDevices">
+   <property name="text">
+    <string>Devices</string>
+   </property>
+  </action>
+  <action name="actionConnect">
+   <property name="text">
+    <string>Connect</string>
+   </property>
+  </action>
+  <action name="actionDisconnect">
+   <property name="text">
+    <string>Disconnect</string>
+   </property>
+  </action>
+  <action name="actionDevices">
+   <property name="text">
+    <string>Settings</string>
+   </property>
+  </action>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>

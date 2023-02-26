@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>FormAnalyzer</class>
+ <widget class="QWidget" name="FormAnalyzer">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>777</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>480</width>
+    <height>440</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>2000</width>
+    <height>1000</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Spectrum Analyzer</string>
+  </property>
+  <layout class="QFormLayout" name="formLayout">
+   <item row="0" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QWidget" name="widgetAnalyzer" native="true">
+       <property name="minimumSize">
+        <size>
+         <width>200</width>
+         <height>440</height>
+        </size>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QTabWidget" name="tabAnalyzer">
+       <property name="minimumSize">
+        <size>
+         <width>250</width>
+         <height>400</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>250</width>
+         <height>450</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="currentIndex">
+        <number>1</number>
+       </property>
+       <widget class="QWidget" name="tabSettings">
+        <attribute name="title">
+         <string>Settings</string>
+        </attribute>
+        <widget class="QFrame" name="frameSpecSettings">
+         <property name="geometry">
+          <rect>
+           <x>6</x>
+           <y>5</y>
+           <width>221</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <widget class="QLabel" name="labelSpecSet">
+          <property name="geometry">
+           <rect>
+            <x>15</x>
+            <y>0</y>
+            <width>121</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Spectrum Settings</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelChannels">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>61</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Channel </string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxChannel">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>20</y>
+            <width>86</width>
+            <height>20</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>2</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="labelWinLen">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>80</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Window Length (Hz):</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxWindowLen">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>80</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>20000</number>
+          </property>
+          <property name="singleStep">
+           <number>100</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelFstart">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>140</y>
+            <width>96</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>FStart (Hz):</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelFstop">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>170</y>
+            <width>101</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>FStop (Hz):</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxFStart">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>140</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>10</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="singleStep">
+           <number>10</number>
+          </property>
+          <property name="value">
+           <number>20</number>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxFStop">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>170</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="maximum">
+           <number>768000</number>
+          </property>
+          <property name="singleStep">
+           <number>1000</number>
+          </property>
+          <property name="value">
+           <number>20000</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelNumFFT">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>110</y>
+            <width>106</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Number of FFT points:</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxFFTPoints">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>110</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelTriglevel">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>76</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Trigger level:</string>
+          </property>
+         </widget>
+         <widget class="QDoubleSpinBox" name="spinBoxTriggerLevel">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>50</y>
+            <width>81</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="decimals">
+           <number>6</number>
+          </property>
+          <property name="minimum">
+           <double>0.000001000000000</double>
+          </property>
+          <property name="maximum">
+           <double>1.000000000000000</double>
+          </property>
+          <property name="singleStep">
+           <double>0.000001000000000</double>
+          </property>
+          <property name="value">
+           <double>0.000001000000000</double>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="frameWindowOpt">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>210</y>
+           <width>221</width>
+           <height>96</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QLabel" name="labelWinOpt">
+          <property name="geometry">
+           <rect>
+            <x>20</x>
+            <y>0</y>
+            <width>121</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Window options</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelWindow">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>25</y>
+            <width>46</width>
+            <height>13</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Window:</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxWindow">
+          <property name="geometry">
+           <rect>
+            <x>108</x>
+            <y>20</y>
+            <width>106</width>
+            <height>22</height>
+           </rect>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelAtt">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>50</y>
+            <width>96</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Attenuation (dB):</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxAttenuation">
+          <property name="geometry">
+           <rect>
+            <x>110</x>
+            <y>50</y>
+            <width>106</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>45</number>
+          </property>
+          <property name="maximum">
+           <number>100</number>
+          </property>
+          <property name="value">
+           <number>100</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelNormENBW">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>75</y>
+            <width>111</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Norm. eff. noise BW:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelValueNENBW">
+          <property name="geometry">
+           <rect>
+            <x>130</x>
+            <y>75</y>
+            <width>81</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>TextLabel</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QFrame" name="frameTraceOpt">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>315</y>
+           <width>221</width>
+           <height>46</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <property name="lineWidth">
+          <number>1</number>
+         </property>
+         <widget class="QLabel" name="labelTraceOpt">
+          <property name="geometry">
+           <rect>
+            <x>15</x>
+            <y>0</y>
+            <width>121</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="text">
+           <string>Trace options</string>
+          </property>
+         </widget>
+         <widget class="QComboBox" name="comboBoxScale">
+          <property name="enabled">
+           <bool>false</bool>
+          </property>
+          <property name="geometry">
+           <rect>
+            <x>128</x>
+            <y>15</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <item>
+           <property name="text">
+            <string>Log</string>
+           </property>
+          </item>
+          <item>
+           <property name="text">
+            <string>Linear</string>
+           </property>
+          </item>
+         </widget>
+         <widget class="QLabel" name="labelScale">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>20</y>
+            <width>66</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Scale:</string>
+          </property>
+         </widget>
+        </widget>
+       </widget>
+       <widget class="QWidget" name="tabMeasurements">
+        <attribute name="title">
+         <string>Distorsion Measurements</string>
+        </attribute>
+        <widget class="QLabel" name="labelDist">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>15</y>
+           <width>66</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Distorsion:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBoxDistorsionType">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>15</y>
+           <width>131</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>Harmonic</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>Intermodulation</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QFrame" name="frameHarmonics">
+         <property name="geometry">
+          <rect>
+           <x>5</x>
+           <y>65</y>
+           <width>231</width>
+           <height>346</height>
+          </rect>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::Box</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <widget class="QTableWidget" name="tableWidgetHarmonics">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>35</y>
+            <width>216</width>
+            <height>226</height>
+           </rect>
+          </property>
+          <column>
+           <property name="text">
+            <string>Frequency</string>
+           </property>
+          </column>
+          <column>
+           <property name="text">
+            <string>Value</string>
+           </property>
+          </column>
+         </widget>
+         <widget class="QLabel" name="labelNumHarm">
+          <property name="geometry">
+           <rect>
+            <x>10</x>
+            <y>10</y>
+            <width>111</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>Num. harmonics:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelTHD1">
+          <property name="geometry">
+           <rect>
+            <x>5</x>
+            <y>265</y>
+            <width>56</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>THD (FFT):</string>
+          </property>
+         </widget>
+         <widget class="QSpinBox" name="spinBoxNumHarmonics">
+          <property name="geometry">
+           <rect>
+            <x>125</x>
+            <y>5</y>
+            <width>86</width>
+            <height>22</height>
+           </rect>
+          </property>
+          <property name="minimum">
+           <number>2</number>
+          </property>
+          <property name="maximum">
+           <number>10</number>
+          </property>
+          <property name="value">
+           <number>10</number>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelSNR">
+          <property name="geometry">
+           <rect>
+            <x>5</x>
+            <y>315</y>
+            <width>31</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>SNR:</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelValueTHD">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>265</y>
+            <width>141</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0.00 dB   (0.000%)</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelValueSNR">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>315</y>
+            <width>136</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0.00 dB</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelTHD2">
+          <property name="geometry">
+           <rect>
+            <x>5</x>
+            <y>290</y>
+            <width>121</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>THD (Goerzel):</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="labelValueTHDG">
+          <property name="geometry">
+           <rect>
+            <x>85</x>
+            <y>290</y>
+            <width>141</width>
+            <height>16</height>
+           </rect>
+          </property>
+          <property name="text">
+           <string>0.00 dB   (0.000%)</string>
+          </property>
+         </widget>
+        </widget>
+        <widget class="QLabel" name="label">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>91</width>
+           <height>16</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string>Weighting Filter:</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBoxWeightingFilter">
+         <property name="geometry">
+          <rect>
+           <x>100</x>
+           <y>40</y>
+           <width>131</width>
+           <height>22</height>
+          </rect>
+         </property>
+         <item>
+          <property name="text">
+           <string>no filter</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>ITU-R 468</string>
+          </property>
+         </item>
+        </widget>
+       </widget>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <tabstops>
+  <tabstop>comboBoxChannel</tabstop>
+  <tabstop>spinBoxTriggerLevel</tabstop>
+  <tabstop>spinBoxWindowLen</tabstop>
+  <tabstop>comboBoxFFTPoints</tabstop>
+  <tabstop>spinBoxFStart</tabstop>
+  <tabstop>spinBoxFStop</tabstop>
+  <tabstop>comboBoxWindow</tabstop>
+  <tabstop>spinBoxAttenuation</tabstop>
+  <tabstop>comboBoxScale</tabstop>
+  <tabstop>comboBoxDistorsionType</tabstop>
+  <tabstop>comboBoxWeightingFilter</tabstop>
+  <tabstop>spinBoxNumHarmonics</tabstop>
+  <tabstop>tableWidgetHarmonics</tabstop>
+  <tabstop>tabAnalyzer</tabstop>
+ </tabstops>
+ <resources/>
+ <connections/>
+ <designerdata>
+  <property name="gridDeltaX">
+   <number>5</number>
+  </property>
+  <property name="gridDeltaY">
+   <number>5</number>
+  </property>
+  <property name="gridSnapX">
+   <bool>true</bool>
+  </property>
+  <property name="gridSnapY">
+   <bool>true</bool>
+  </property>
+  <property name="gridVisible">
+   <bool>true</bool>
+  </property>
+ </designerdata>
+</ui>
